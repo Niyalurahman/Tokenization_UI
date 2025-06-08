@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { type Property } from '../types';
+import { type Property } from '../../types';
 import { X } from 'lucide-react';
 
 interface InvestModalProps {

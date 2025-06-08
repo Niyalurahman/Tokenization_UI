@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { type Property } from '../types';
+import { type Property } from '../../types';
 // This line expects InvestModal.tsx to be in the same folder as this file.
 import { InvestModal } from './InvestModal';
 import { TrendingUp, TrendingDown, MapPin } from 'lucide-react';

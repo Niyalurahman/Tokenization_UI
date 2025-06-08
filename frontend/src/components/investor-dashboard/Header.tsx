@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Bell, Trash2, Sun, Moon, Building2 } from 'lucide-react';
-import { useOnClickOutside } from '../hooks/useOnClickOutside';
+import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import { useTheme } from './providers/ThemeProvider';
-import type { Notification } from '../types';
-import { mockNotifications } from '../data/mockData';
+import type { Notification } from '../../types';
+import { mockNotifications } from '../../data/mockData';
 
 export const Header = () => {
   const { theme, toggleTheme } = useTheme();

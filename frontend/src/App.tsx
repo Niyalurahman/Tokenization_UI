@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
-import { ThemeProvider } from './components/providers/ThemeProvider';
-import { Header } from './components/Header';
+import { ThemeProvider } from './components/investor-dashboard/providers/ThemeProvider'
+import { Header } from './components/investor-dashboard/Header';
 import HomePage from './pages/HomePage';
 import PortfolioPage from './pages/PortfolioPage';
 

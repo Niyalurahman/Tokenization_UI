@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Eye, EyeOff, ArrowRight, CheckCircle } from 'lucide-react';
 import { useGoogleLogin } from '@react-oauth/google';
-import GoogleButton from '../auth/GoogleButton'
-import InputField from '../auth/InputField';
+import GoogleButton from './GoogleButton';
+import InputField from './InputField';
 
 interface AuthCardProps {
   onSuccess?: () => void;

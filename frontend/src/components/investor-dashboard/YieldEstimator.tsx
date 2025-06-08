@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { type Holding } from '../types';
+import { type Holding } from '../../types';
 
 interface YieldEstimatorProps {
   holdings: Holding[];

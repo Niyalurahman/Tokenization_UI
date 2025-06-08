@@ -1,4 +1,4 @@
-import { YieldEstimator } from '../components/YieldEstimator';
+import { YieldEstimator } from '../components/investor-dashboard/YieldEstimator';
 import { mockHoldings, mockPayouts } from '../data/mockData';
 
 const PortfolioPage = () => {

@@ -1,0 +1,71 @@
+// admin.schema.prisma
+
+model KYCSubmission {
+  id          Int      @id @default(autoincrement())
+  name        String
+  email       String   @unique
+  role        Role
+  status      String   @default("PENDING")
+  submittedAt DateTime @default(now())
+  reviewedAt  DateTime?
+  reviewer    String?
+  comments    String?
+}
+
+model User {
+  id              Int              @id @default(autoincrement())
+  name            String
+  email           String           @unique
+  role            Role
+  isActive        Boolean          @default(true)
+  createdAt       DateTime         @default(now())
+  lastLogin       DateTime?
+  totalInvestment Float            @default(0)
+  totalEarnings   Float            @default(0)
+
+  holdings        PropertyHolding[]  
+}
+
+model PropertySubmission {
+  id              Int      @id @default(autoincrement())
+  ownerId         Int
+  title           String
+  description     String
+  status          String   @default("PENDING")
+  location        String
+  documentsUrl    String
+  submittedAt     DateTime @default(now())
+  reviewedAt      DateTime?
+  reviewer        String?
+  rejectionReason String?
+  tokenized       Boolean  @default(false)
+  totalTokens     Int      @default(100)
+
+  holdings        PropertyHolding[] 
+}
+
+
+
+enum Role {
+  INVESTOR
+  LANDOWNER
+  COMPLIANCE
+  ADMIN
+}
+
+
+
+model PropertyHolding {
+  id         Int      @id @default(autoincrement())
+  propertyId Int
+  userId     Int
+  tokens     Int
+  createdAt  DateTime @default(now())
+
+  // Optional relations if needed
+  user       User     @relation(fields: [userId], references: [id])
+  property   PropertySubmission @relation(fields: [propertyId], references: [id])
+}
+
+
+

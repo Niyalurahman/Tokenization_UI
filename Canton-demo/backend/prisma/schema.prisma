@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Asset {
+  id            Int      @id @default(autoincrement())
+  contractId    String   @unique
+  templateId    String
+  name          String
+  instrumentId  String
+  totalSupply   Int
+  price         Float
+  issuer        String
+  investor      String
+  createdAt     DateTime @default(now())
+}
